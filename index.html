@@ -1,12 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./main.css">
-  <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tug'ilgan Kun Taklifnomasi</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, rgb(208, 174, 188), #17171537);
+            color: #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        .invitation {
+            background: #fff;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+        }
+        .invitation h1 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color: #f06;
+        }
+        .invitation p {
+            font-size: 1rem;
+            margin: 10px 0;
+        }
+        .invitation .cta {
+            margin-top: 20px;
+        }
+        .invitation .cta button {
+            background: #f06;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        .invitation .cta button:hover {
+            background: #d00549;
+        }
+    </style>
 </head>
 <body>
-  
+    <div class="invitation">
+        <h1>Tug'ilgan Kun Taklifnomasi</h1>
+        <p id="invitee-name">Hurmatli mehmon,</p>
+        <p>Sizni tug'ilgan kunimizga taklif qilamiz!</p>
+        <p><strong>Vaqt:</strong> 2024-01-01, </p>
+        <p><strong>Manzil:</strong>TTZ MUNISA KAFESI </p>
+        <div class="cta">
+            <button onclick="acceptInvitation()">Ishtirok Etaman</button>
+        </div>
+    </div>
+
+    <script>
+        // Dinamik ism kiritish uchun kod
+        const urlParams = new URLSearchParams(window.location.search);
+        const name = urlParams.get('name');
+        const inviteeNameElement = document.getElementById('invitee-name');
+
+        if (name) {
+            inviteeNameElement.textContent = `${name}, sizni taklif qilamiz!`;
+        }
+
+        function acceptInvitation() {
+            alert('Rahmat! Ishtirokingizni sabrsizlik bilan kutamiz!');
+        }
+    </script>
 </body>
 </html>
